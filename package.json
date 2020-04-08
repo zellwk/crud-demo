@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "web": "node server.js",
     "dev": "nodemon server.js"
   },
   "author": "Zell Liew <zellwk@gmail.com> (https://zellwk.com)",
