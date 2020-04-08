@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node pm2.js",
     "restart": "node pm2.js crud-demo --update-env",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "sync": "node sync.js"
   },
   "author": "Zell Liew <zellwk@gmail.com> (https://zellwk.com)",
   "license": "MIT",
@@ -18,6 +19,7 @@
     "mongodb": "^3.5.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "rsync": "^0.6.1"
   }
 }

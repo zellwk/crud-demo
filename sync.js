@@ -4,7 +4,7 @@ const Rsync = require('rsync')
 require('./dotenv')
 
 // Sync secrets
-// sync('./secrets', '/var/www/crud-app')
+sync('./secrets', '/var/www/crud-demo')
 
 // ========================
 // Functions
