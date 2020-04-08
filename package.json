@@ -1,16 +1,18 @@
 {
-  "name": "crud-express-mongo",
+  "name": "crud-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Demo for Crud Express MongoDB article at https://zellwk.com/blog/crud-express-mongodb",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node pm2.js",
+    "restart": "node pm2.js crud-demo --update-env",
     "dev": "nodemon server.js"
   },
   "author": "Zell Liew <zellwk@gmail.com> (https://zellwk.com)",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "mongodb": "^3.5.5"
