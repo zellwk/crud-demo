@@ -7,6 +7,9 @@ const app = express()
 // Link to Database
 // ========================
 // Replace process.env.DB_URL with your actual connection string
+
+console.log('heyo')
+console.log(process.env.DB_URL)
 const connectionString = process.env.DB_URL
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
