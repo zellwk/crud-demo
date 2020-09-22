@@ -2,24 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Star Wars Quote App</title>
+    <title>Diary</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
 
   <body>
-    <h1 data-position="header">May Node and Express be with you.</h1>
+    <h1 data-position="header">My Diary</h1>
 
-    <section data-position="add-quote">
-      <h2>Add quote</h2>
+    <section data-position="add-diary">
+      <h2>Add diary</h2>
 
       <form action="/posts" method="POST">
-        <input type="text" placeholder="name" name="name" />
-        <input type="text" placeholder="post" name="post" />
-        <button type="submit">Submit</button>
+        <input type="text" placeholder="title" name="name" />
+        <input type="text" placeholder="diary" name="post" />
+        <button type="submit" style="text-align: center;">Submit</button>
       </form>
     </section>
 
-    <section data-position="update-quote">
+    <!-- <section data-position="update-quote">
       <div>
         <h2>Darth Vadar invades!</h2>
         <p>
@@ -27,26 +27,26 @@
         </p>
         <button id="update-button">Replace Yoda's quote</button>
       </div>
-    </section>
+    </section> -->
 
-    <section data-position="delete-quote">
+    <!-- <section data-position="delete-quote">
       <div>
         <h2>Remove Darth Vadar!</h2>
         <p>
           Delete one Darth Vadar's quote. Does nothing if there are no more
           Darth Vadar's quote
         </p>
-        <!-- <button id="delete-button">Delete Darth Vadar's quote</button> -->
+        <button id="delete-button">Delete Darth Vadar's quote</button>
       </div>
       <div id="message"></div>
-    </section>
+    </section> -->
 
     <section data-position="posts">
       <h2>Posts</h2>
 
       <ul class="posts">
         <% for(var i = 0; i < posts.length; i++) {%>
-        <li class="quote">
+        <li class="posts">
           <span><%= posts[i].name %></span>
           <span><%= posts[i].post %></span>
           <button value=<%= posts[i].name %> class="delete-button">Delete</button>
