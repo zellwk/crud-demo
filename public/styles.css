@@ -13,7 +13,7 @@ body {
   box-sizing: border-box;
   margin: 50px;
   padding: 1rem;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   background-image: url("./images/nemo.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -33,13 +33,17 @@ h2 {
 }
 
 .inputs > input {
+  background: #ccffff;
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid #ccffff;
   margin-right: 20px;
+  padding: 10px;
 }
 .inputs > button {
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid #666B68;
+  padding: 10px;
+  margin: 3px;
 }
 
 .inputs > button:hover {
@@ -49,9 +53,23 @@ h2 {
   transition: 0.8s;
 }
 
+.edit-input {
+  background: #ccffff;
+  border-radius: 5px;
+  border: 1px solid #ccffff;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.posts {
+  list-style: none;
+}
+
 .posts > button {
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid #666B68;
+  padding: 10px;
+  margin: 3px;
 }
 
 .posts > button:hover {
@@ -65,8 +83,8 @@ h2 {
   width: 500px;
 }
 
-ul.posts {
-  
+.span-first {
+  padding-right: 30px;
 }
 
 
@@ -84,7 +102,8 @@ ul.posts {
 }
 
 [data-position] {
-  opacity: 0.8;
+  opacity: 0.7;
+  background: #fff;
   /* border-radius: 0.5rem; */
   border: 1px solid #000;
   padding: 1rem;
@@ -101,4 +120,9 @@ h2 {
 
 .posts-list {
   justify-content: center;
+}
+
+.input-edit {
+  /* text-align: center; */
+ margin-left: 60%;
 }

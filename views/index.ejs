@@ -10,12 +10,10 @@
     <h1 data-position="header">My Diary</h1>
 
     <section data-position="add-diary">
-      <h2>Add diary</h2>
-
       <form action="/posts" method="POST">
         <div class="inputs">
-        <input type="text" placeholder="title" name="name" />
-        <input type="text" placeholder="diary" name="post" class="input-second" />
+        <input type="text" placeholder="Date" name="name" />
+        <input type="text" placeholder="Diary" name="post" class="input-second" />
         <button type="submit" style="text-align: center;">Submit</button>
         </div>
       </form>
@@ -28,14 +26,16 @@
       <ul class="posts">
         <% for(var i = 0; i < posts.length; i++) {%>
         <li class="posts">
-          <span><%= posts[i].name %></span>
+          <span class="span-first"><%= posts[i].name %></span>
           <span><%= posts[i].post %></span>
           <button value=<%= posts[i].name %> class="delete-button">Delete</button>
           <button value=<%= posts[i].name %> class="edit-button">Edit</button>
         </li>
         <% } %>
       </ul>
-      <input type="text" class="edit-input"/>
+      <div class="input-edit">
+      <input type="text" class="edit-input" placeholder="Edit your diary"/>
+      </div>  
     </div>
     </section>
 
