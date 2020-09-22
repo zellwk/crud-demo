@@ -8,16 +8,16 @@ const app = express()
 // ========================
 // Updates environment variables
 // @see https://zellwk.com/blog/environment-variables/
-require('./dotenv')
+
 
 // Replace process.env.DB_URL with your actual connection string
-const connectionString = process.env.DB_URL
+const connectionString = "mongodb+srv://sachiko95:lucky7@cluster0.ilksw.mongodb.net/blog-engine?retryWrites=true&w=majority"
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
-    const db = client.db('star-wars-quotes')
-    const quotesCollection = db.collection('quotes')
+    const db = client.db('blog')
+    const postsCollection = db.collection('posts')
 
     // ========================
     // Middlewares
@@ -31,28 +31,28 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     // Routes
     // ========================
     app.get('/', (req, res) => {
-      db.collection('quotes').find().toArray()
-        .then(quotes => {
-          res.render('index.ejs', { quotes: quotes })
+      db.collection('posts').find().toArray()
+        .then(posts => {
+          res.render('index.ejs', { posts: posts })
         })
         .catch(/* ... */)
     })
 
-    app.post('/quotes', (req, res) => {
-      quotesCollection.insertOne(req.body)
+    app.post('/posts', (req, res) => {
+      postsCollection.insertOne(req.body)
         .then(result => {
           res.redirect('/')
         })
         .catch(error => console.error(error))
     })
 
-    app.put('/quotes', (req, res) => {
-      quotesCollection.findOneAndUpdate(
-        { name: 'Yoda' },
+    app.put('/posts', (req, res) => {
+      postsCollection.findOneAndUpdate(
+        { name: req.body.name },
         {
           $set: {
             name: req.body.name,
-            quote: req.body.quote
+            post: req.body.post
           }
         },
         {
@@ -63,15 +63,15 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         .catch(error => console.error(error))
     })
 
-    app.delete('/quotes', (req, res) => {
-      quotesCollection.deleteOne(
+    app.delete('/posts', (req, res) => {
+      postsCollection.deleteOne(
         { name: req.body.name }
       )
         .then(result => {
           if (result.deletedCount === 0) {
-            return res.json('No quote to delete')
+            return res.json('No post to delete')
           }
-          res.json('Deleted Darth Vadar\'s quote')
+          res.json('Deleted Darth Vadar\'s post')
         })
         .catch(error => console.error(error))
     })
@@ -80,7 +80,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     // Listen
     // ========================
     const isProduction = process.env.NODE_ENV === 'production'
-    const port = isProduction ? 7500 : 3000
+    const port = isProduction ? 7500 : 3001
     app.listen(port, function () {
       console.log(`listening on ${port}`)
     })

@@ -12,9 +12,9 @@
     <section data-position="add-quote">
       <h2>Add quote</h2>
 
-      <form action="/quotes" method="POST">
+      <form action="/posts" method="POST">
         <input type="text" placeholder="name" name="name" />
-        <input type="text" placeholder="quote" name="quote" />
+        <input type="text" placeholder="post" name="post" />
         <button type="submit">Submit</button>
       </form>
     </section>
@@ -36,22 +36,25 @@
           Delete one Darth Vadar's quote. Does nothing if there are no more
           Darth Vadar's quote
         </p>
-        <button id="delete-button">Delete Darth Vadar's quote</button>
+        <!-- <button id="delete-button">Delete Darth Vadar's quote</button> -->
       </div>
       <div id="message"></div>
     </section>
 
-    <section data-position="quotes">
-      <h2>Quotes</h2>
+    <section data-position="posts">
+      <h2>Posts</h2>
 
-      <ul class="quotes">
-        <% for(var i = 0; i < quotes.length; i++) {%>
+      <ul class="posts">
+        <% for(var i = 0; i < posts.length; i++) {%>
         <li class="quote">
-          <span><%= quotes[i].name %></span>:
-          <span><%= quotes[i].quote %></span>
+          <span><%= posts[i].name %></span>
+          <span><%= posts[i].post %></span>
+          <button value=<%= posts[i].name %> class="delete-button">Delete</button>
+          <button value=<%= posts[i].name %> class="edit-button">Edit</button>
         </li>
         <% } %>
       </ul>
+      <input type="text" class="edit-input"/>
     </section>
 
     <script src="/main.js"></script>
