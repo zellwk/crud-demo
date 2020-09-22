@@ -13,37 +13,18 @@
       <h2>Add diary</h2>
 
       <form action="/posts" method="POST">
+        <div class="inputs">
         <input type="text" placeholder="title" name="name" />
-        <input type="text" placeholder="diary" name="post" />
+        <input type="text" placeholder="diary" name="post" class="input-second" />
         <button type="submit" style="text-align: center;">Submit</button>
+        </div>
       </form>
     </section>
-
-    <!-- <section data-position="update-quote">
-      <div>
-        <h2>Darth Vadar invades!</h2>
-        <p>
-          Replace first Yoda's quote with a quote written by Darth Vadar
-        </p>
-        <button id="update-button">Replace Yoda's quote</button>
-      </div>
-    </section> -->
-
-    <!-- <section data-position="delete-quote">
-      <div>
-        <h2>Remove Darth Vadar!</h2>
-        <p>
-          Delete one Darth Vadar's quote. Does nothing if there are no more
-          Darth Vadar's quote
-        </p>
-        <button id="delete-button">Delete Darth Vadar's quote</button>
-      </div>
-      <div id="message"></div>
-    </section> -->
 
     <section data-position="posts">
       <h2>Posts</h2>
 
+      <div class="posts-list">
       <ul class="posts">
         <% for(var i = 0; i < posts.length; i++) {%>
         <li class="posts">
@@ -55,6 +36,7 @@
         <% } %>
       </ul>
       <input type="text" class="edit-input"/>
+    </div>
     </section>
 
     <script src="/main.js"></script>

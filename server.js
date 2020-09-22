@@ -71,7 +71,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
           if (result.deletedCount === 0) {
             return res.json('No post to delete')
           }
-          res.json('Deleted Darth Vadar\'s post')
+          res.json('Deleted post')
         })
         .catch(error => console.error(error))
     })

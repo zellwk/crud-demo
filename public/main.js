@@ -76,24 +76,24 @@ deleteButton.forEach((item, index) => {
   })
 })
 
-// deleteButton.addEventListener('click', e => {
-//   console.log(e.target.value)
-//   fetch('/posts', {
-//     method: 'delete',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({
-//       name: e.target.value
-//     })
-//   })
-//     .then(res => {
-//       if (res.ok) return res.json()
-//     })
-//     .then(response => {
-//       if (response === 'No post to delete') {
-//         messageDiv.textContent = 'No Darth Vadar post to delete'
-//       } else {
-//         window.location.reload(true)
-//       }
-//     })
-//     .catch(console.error)
-// })
+deleteButton.addEventListener('click', e => {
+  console.log(e.target.value)
+  fetch('/posts', {
+    method: 'delete',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: e.target.value
+    })
+  })
+    .then(res => {
+      if (res.ok) return res.json()
+    })
+    .then(response => {
+      if (response === 'No post to delete') {
+        messageDiv.textContent = 'No Darth Vadar post to delete'
+      } else {
+        window.location.reload(true)
+      }
+    })
+    .catch(console.error)
+})
