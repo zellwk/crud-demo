@@ -17,7 +17,7 @@
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "mongodb": "^3.5.5",
-    "pm2": "^4.2.3"
+    "pm2": "^5.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
